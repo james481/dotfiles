@@ -29,6 +29,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 filetype plugin indent on
@@ -70,6 +72,10 @@ let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-d>"
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="James Watts"
+
+" Nerd Commenter
+
+let g:NERDSpaceDelims=1
 
 "-------------------------------------------------------------------------------
 "
@@ -146,6 +152,7 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader>t :tabedit<CR>
+nnoremap <Leader>v :vnew<CR>
 
 " Line numbers
 
@@ -158,6 +165,8 @@ nnoremap <F1> :BufExplorer<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <Leader>T :NERDTreeToggle<CR>
 nnoremap <F3> :TagbarOpenAutoClose<CR>
+vmap <Leader>a <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
 
 " Git (Fugitive) Mappings
 
@@ -166,6 +175,11 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gd :Gdiff<CR>
+
+" Formatting Mappings
+
+nnoremap <Leader>Fh :%! tidy -iq -f /dev/null --tidy-mark n --doctype omit <CR>
+nnoremap <Leader>Fj :%! python -m json.tool <CR>
 
 " Misc
 
