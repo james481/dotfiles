@@ -31,6 +31,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
@@ -67,7 +68,6 @@ inoremap <expr><C-e> neocomplete#cancel_popup()
 
 " Ultisnips
 
-let g:UltiSnipsExpandTrigger="<c-f>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-d>"
 let g:UltiSnipsEditSplit="vertical"
@@ -132,7 +132,9 @@ set backspace=eol,start,indent " Backspace over line breaks, insertion, indent
 set history=100 " Increase history of searches and commands
 set wildmenu " Allow tab completion of filenames
 set wildmode=longest:full " Look for longest match
+set wildignore+=*/.git/*,*/vendor/*,*/puphpet/*,*/docs/api/*,*/data/* " Ignore git, vendor, PuPHPet VM files
 set magic " Regular expression magic
+set pastetoggle=<F4> " Toggle paste mode
 
 "-------------------------------------------------------------------------------
 "
