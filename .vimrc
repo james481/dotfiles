@@ -35,6 +35,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,14 +53,18 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 " <CR>: Close NC popup and expand snippet
+" unless in comment (^(*|\/\/))
 
 let g:ulti_expand_res = 0
 function! s:BindCrSnippetExpand()
     if pumvisible()
         call neocomplete#close_popup()
     endif
-    call UltiSnips#ExpandSnippet()
-    return (g:ulti_expand_res) ? "" : "\<CR>"
+    if getline(".") !~ '\v^(\s)*(*|\/\/)'
+        call UltiSnips#ExpandSnippet()
+        return (g:ulti_expand_res) ? "" : "\<CR>"
+    endif
+    return "\<CR>"
 endfunction
 inoremap <silent> <CR> <C-r>=<SID>BindCrSnippetExpand()<CR>
 
