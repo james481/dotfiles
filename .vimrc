@@ -167,7 +167,7 @@ nnoremap <Leader>v :vnew<CR>
 " Line numbers
 
 nnoremap <Leader>n :set invnumber<CR>
-nnoremap <Leader>N :set rnu
+nnoremap <Leader>N :set invrnu<CR>
 
 " Bundle Mappings
 
