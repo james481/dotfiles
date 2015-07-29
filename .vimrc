@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Custom bundles go here
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jlanzarotta/bufexplorer'
@@ -36,6 +36,7 @@ Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'rking/ag.vim'
+Plugin 'groenewege/vim-less'
 
 call vundle#end()
 filetype plugin indent on
