@@ -1,0 +1,15 @@
+[user]
+	name = James Watts
+	email = jamescwatts@gmail.com
+[push]
+	default = current
+[core]
+	editor = /usr/local/bin/vim
+[alias]
+    c = checkout
+    s = status
+    b = branch
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
