@@ -37,6 +37,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'rking/ag.vim'
 Plugin 'groenewege/vim-less'
+Plugin 'shawncplus/phpcomplete.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -86,6 +87,10 @@ let g:snips_author="James Watts"
 
 let g:NERDSpaceDelims=1
 
+" NerdTree
+
+let g:NERDTreeWinSize=40
+
 "-------------------------------------------------------------------------------
 "
 " Colors
@@ -94,6 +99,7 @@ syntax on
 set background=dark
 colorscheme anotherdark
 highlight Pmenu ctermfg=black ctermbg=248 guibg=248
+set colorcolumn=81
 
 "-------------------------------------------------------------------------------
 "
@@ -141,7 +147,7 @@ set backspace=eol,start,indent " Backspace over line breaks, insertion, indent
 set history=100 " Increase history of searches and commands
 set wildmenu " Allow tab completion of filenames
 set wildmode=longest:full " Look for longest match
-set wildignore+=*/.git/*,*/vendor/*,*/puphpet/*,*/docs/api/*,*/data/* " Ignore git, vendor, PuPHPet VM files
+set wildignore+=*/.git/*,*/vendor/*,*/puphpet/*,*/docs/api/*,*/data/*,*/node_modules/* " Ignore git, vendor, PuPHPet VM, NPM files
 set magic " Regular expression magic
 set pastetoggle=<F4> " Toggle paste mode
 
@@ -207,3 +213,20 @@ nnoremap <Leader>U :UltiSnipsEdit<CR>
 " Remove trailing whitespace
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Drupal code style mode
+
+let s:is_drupal_mode = 0
+function! DrupalMode()
+    if (s:is_drupal_mode)
+        setlocal shiftwidth=4
+        setlocal tabstop=4
+        let s:is_drupal_mode=0
+    else
+        setlocal shiftwidth=2
+        setlocal tabstop=2
+        setlocal ft=php
+        let s:is_drupal_mode=1
+    endif
+endfunction
+nnoremap <Leader>D :call DrupalMode()<CR>
