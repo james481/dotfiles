@@ -1,0 +1,287 @@
+priority 1
+
+snippet classz
+<?php
+
+/**
+* `!p
+parts = re.split('\/projects\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @license All Rights Reserved
+* @copyright 2015
+* @author James Watts <james[at]zingstudios[dot]com>
+*
+*/
+
+namespace `!p
+parts = re.split("/projects/src/", path)
+if len(parts) is 2:
+	ns = parts[1].replace("/", "\\").replace(".php","")
+else:
+  ns = path.replace("/", "\\").replace(".php","")
+snip.rv = ns
+`;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class `!p snip.rv = snip.basename`${2: Extends Abstract`!p snip.rv = snip.basename`}
+{
+		${0}
+}
+endsnippet
+
+snippet doc_p
+/**
+ * ${VISUAL}${4:Property Description}
+ * @var ${VISUAL}${3:void} $$2
+ */
+${VISUAL}${1:public} $${VISUAL}${2:var};
+endsnippet
+
+snippet doc_co
+/**
+ * ${VISUAL}${3:Const Description}
+ * @const $1
+ */
+const ${VISUAL}${1:CONSTANT} = ${VISUAL}${2:'foo'};
+endsnippet
+
+snippet construct
+/**
+ * Constructor
+ *
+ * @param $2mixed ${1/, /\n     * \@param mixed /g}
+ * @return void
+ */
+public function __construct(${1:$dependencies})
+{${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+}
+$0
+endsnippet
+
+snippet doc_f
+/**
+ * $2
+ *
+ * @return ${4:void}
+ */
+${1:public }function ${2:someFunc}(${3})
+{${5}
+}
+endsnippet
+
+snippet class
+<?php
+
+/**
+* `!p
+parts = re.split('\/projects\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @author James Watts <jamescwatts[at]gmail[dot]com>
+* @copyright (c) 2015 James Watts
+* @license MIT
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+namespace `!p
+parts = re.split("src/", path)
+if len(parts) is 2:
+	ns = parts[1].replace("/", "\\")
+	ns = ns.replace("src\\", "")
+	ns = ns.replace("\\" + fn, "");
+else:
+	ns = path.replace("/", "\\")
+	ns = ns.replace("\\" + fn, "");
+snip.rv = ns
+`;
+
+class `!p snip.rv = snip.basename`${2: extends Abstract`!p snip.rv = snip.basename`}
+{
+		${0}
+}
+endsnippet
+
+snippet classu
+<?php
+
+/**
+* `!p
+parts = re.split('\/projects\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @author James Watts <jamescwatts[at]gmail[dot]com>
+* @copyright (c) 2015 James Watts
+* @license MIT
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+namespace `!p
+parts = re.split("tests/", path)
+if len(parts) is 2:
+	ns = parts[1].replace("/", "\\")
+	ns = ns.replace("tests\\", "")
+	ns = ns.replace("\\" + fn, "");
+else:
+	ns = path.replace("/", "\\")
+	ns = ns.replace("\\" + fn, "");
+snip.rv = ns
+`;
+
+class `!p snip.rv = snip.basename` extends \PHPUnit_Framework_TestCase
+{
+		${0}
+}
+endsnippet
+
+snippet classv
+<?php
+
+/**
+* ${1:Class Description}
+*
+* `!p
+parts = re.split('\/Library\/WebServer\/cos2\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* @copyright (c) 2015 VisionLink, Inc
+*/
+
+/**
+ * `!p snip.rv = snip.basename`
+ *
+ * $1
+ */
+class `!p snip.rv = snip.basename`${2: extends Abstract`!p snip.rv = snip.basename`}
+{
+		${0}
+}
+endsnippet
+
+snippet classp
+<?php
+
+/**
+* `!p
+parts = re.split('\/projects\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @author James Watts <james[at]primewellness[dot]com>
+* @copyright (c) 2015 PrimeWellness, LLC
+*
+* All rights reserved. No unauthorized distribution or reproduction.
+*/
+
+namespace `!p
+parts = re.split("src/", path)
+if len(parts) is 2:
+	ns = parts[1].replace("/", "\\")
+	ns = ns.replace("src\\", "")
+	ns = ns.replace("\\" + fn, "");
+else:
+	ns = path.replace("/", "\\")
+	ns = ns.replace("\\" + fn, "");
+snip.rv = ns
+`;
+
+/**
+ * `!p snip.rv = snip.basename`
+ *
+ * $1
+ */
+class `!p snip.rv = snip.basename`${2: extends Abstract`!p snip.rv = snip.basename`}
+{
+		${0}
+}
+endsnippet
+
+snippet classt
+<?php
+
+/**
+* `!p
+parts = re.split('\/projects\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @author James Watts <jwatts[at]thirdandgrove[dot]com>
+* @copyright (c) 2015 Third And Grove
+*
+* All rights reserved. No unauthorized distribution or reproduction.
+*/
+
+namespace `!p
+parts = re.split("src/", path)
+if len(parts) is 2:
+	ns = parts[1].replace("/", "\\")
+	ns = ns.replace("src\\", "")
+	ns = ns.replace("\\" + fn, "");
+else:
+	ns = path.replace("/", "\\")
+	ns = ns.replace("\\" + fn, "");
+snip.rv = ns
+`;
+
+/**
+ * `!p snip.rv = snip.basename`
+ *
+ * $1
+ */
+class `!p snip.rv = snip.basename`${2: extends Abstract`!p snip.rv = snip.basename`}
+{
+		${0}
+}
+endsnippet
+
+snippet edoc_cv
+
+/**
+* `!p
+parts = re.split('\/Library\/WebServer\/cos2\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+*
+* ${1:Class Description}
+*
+* @copyright (c) 2015 VisionLink, Inc
+*/
+
+endsnippet
+
+snippet edoc_cvf
+* `!p
+parts = re.split('\/Library\/WebServer\/cos2\/', path);
+snip.rv = parts[1] if len(parts) is 2 else path
+`
+endsnippet
+
+snippet edoc_f
+/**
+ * ${1: Function}
+ *
+ * ${2: Description}
+ *
+ * @return ${4:void}
+ */
+endsnippet
