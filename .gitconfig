@@ -1,10 +1,10 @@
 [user]
 	name = James Watts
-	email = jamescwatts@gmail.com
+	email = james@gocariq.com
 [push]
 	default = current
 [core]
-	editor = /usr/local/bin/vim
+	editor = /opt/homebrew/bin/vim
 [alias]
     c = checkout
     s = status
@@ -13,3 +13,8 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[init]
+	defaultBranch = main
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

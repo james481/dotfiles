@@ -28,16 +28,16 @@ Plugin 'honza/vim-snippets'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'rking/ag.vim'
 Plugin 'groenewege/vim-less'
-Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'fatih/vim-go'
+Plugin 'uarun/vim-protobuf'
+Plugin 'ustcyue/proto-number'
 
 call vundle#end()
 filetype plugin indent on
@@ -98,7 +98,7 @@ let g:NERDTreeWinSize=40
 syntax on
 set background=dark
 colorscheme anotherdark
-highlight Pmenu ctermfg=black ctermbg=248 guibg=248
+" highlight Pmenu ctermfg=black ctermbg=248 guibg=248
 set colorcolumn=81
 
 "-------------------------------------------------------------------------------
@@ -117,8 +117,8 @@ set ignorecase " Case-insensitive search
 
 set autoindent " Indent next line
 set expandtab " Always use spaces, not tabs
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " File I/O Options
 
